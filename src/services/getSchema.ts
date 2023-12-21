@@ -7,8 +7,7 @@ import getBenchmarkRelease from "@/utils/getBenchmarkRelease";
 export default async function getSchema(signal: AbortSignal): Promise<Schema> {
   try {
     const resp = await fetch(
-      `https://crfm.stanford.edu/helm/${
-        getBenchmarkRelease() || getBenchmarkSuite()
+      `https://crfm.stanford.edu/heim/${getBenchmarkSuite() || getBenchmarkRelease()
       }/schema.yaml`,
       { signal },
     );

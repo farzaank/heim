@@ -1,6 +1,6 @@
 window.BENCHMARK_OUTPUT_BASE_URL =
-	"https://storage.googleapis.com/crfm-helm-public/lite/benchmark_output/";
-window.SUITE = null;
-window.RELEASE = "v1.0.0";
+	"https://nlp.stanford.edu/helm/v1.1.0/benchmark_output/"; // FOR NOW NEED TO UPDATE THIS WITH RELEASE ANYTIME WE CHANGE RELEASE FOR HEIM
+window.SUITE = "v1.1.0"; // IF YOU UPDATE THIS, ALSO UPDATE BENCHMARK_OUTPUT_BASE_URL
+window.RELEASE = null;
 window.MANIFEST_JSON_URL = null;
 window.MANIFEST_ID = 0;

@@ -131,7 +131,7 @@ export default function GroupsCharts({ groupsTables, activeGroup }: Props) {
               hide={activeBars.get(section) === false}
               type="linear"
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,
-              fill={theme[colorNames[idx % colorNames.length]]}
+              fill={theme[colorNames[idx % colorNames.length]]} // eslint-disable-line @typescript-eslint/no-unsafe-assignment
               dataKey={section}
               key={section}
               name={section}

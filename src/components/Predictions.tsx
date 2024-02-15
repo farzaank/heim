@@ -41,7 +41,7 @@ export default function Predictions({ predictions, requests }: Props) {
                   prediction.base64_images[0] ? (
                     <img
                       src={"data:image;base64," + prediction.base64_images[0]}
-                      alt="Base64 Image"
+                      alt="Base64 Image Prediction"
                     />
                   ) : null}
                 </div>

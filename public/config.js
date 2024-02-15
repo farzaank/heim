@@ -1,3 +1,6 @@
-window.BENCHMARK_OUTPUT_BASE_URL = "https://nlp.stanford.edu/helm/v1.1.0/";
-window.RELEASE = null;
-window.SUITE = "v1.1.0";
+window.BENCHMARK_OUTPUT_BASE_URL =
+	"https://storage.googleapis.com/crfm-helm-public/lite/benchmark_output/";
+window.SUITE = null;
+window.RELEASE = "v1.0.0";
+window.MANIFEST_JSON_URL = null;
+window.MANIFEST_ID = 0;

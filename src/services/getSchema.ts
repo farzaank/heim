@@ -13,12 +13,16 @@ export default async function getSchema(signal: AbortSignal): Promise<Schema> {
 
     return (await resp.json()) as Schema;
   } catch (error) {
+    // Fallback to schema.yaml if schema.json is not found since some HELMets do not have schema.json
     try {
       let url = getBenchmarkEndpoint(`${getVersionBaseUrl()}/`) + `schema.yaml`;
+
+      // if suite appears before benchmark_output, we need to replace that part of the url (since it means suite appears twice)
       const suite = getBenchmarkSuite();
       if (suite && url.includes(suite + "/benchmark_output/runs/")) {
         url = url.replace(suite + "/benchmark_output/runs/", "");
       }
+
       const resp = await fetch(url, { signal });
       const data = await resp.text();
       const schema = parse(data) as Schema;

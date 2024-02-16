@@ -33,17 +33,20 @@ export default function Predictions({ predictions, requests }: Props) {
               {predictions.length > 1 ? <h2>Trial {idx}</h2> : null}
               <div className="mt-2 w-full">
                 <h3>
-                  <span className="mr-4">Prediction image</span>
+                  <span className="mr-4">Prediction images</span>
                 </h3>
                 <div>
                   {prediction &&
                   prediction.base64_images &&
-                  prediction.base64_images[0] ? (
-                    <img
-                      src={"data:image;base64," + prediction.base64_images[0]}
-                      alt="Base64 Image Prediction"
-                    />
-                  ) : null}
+                  prediction.base64_images[0]
+                    ? prediction.base64_images.map((image, index) => (
+                        <img
+                          key={index}
+                          src={"data:image;base64," + image}
+                          alt={`Base64 Image Prediction ${index}`}
+                        />
+                      ))
+                    : null}
                 </div>
               </div>
               <div className="accordion-wrapper">
